@@ -2,7 +2,15 @@ const express = require('express') // importar o express
 const app = express() // instanciando o express() a partir da função
 bodyParser = require('body-parser')
 
-const saudacao = require('./saudacaoMid') // como 'saudacaoMid está dentro da pasta, se acessa usando o caminho relativo
+// como 'saudacaoMid está dentro da pasta, se acessa usando o caminho relativo
+const saudacao = require('./saudacaoMid') 
+const usuarioApi = require('./api/usuario')
+
+//fez a comunicação com o módulo api/produto. Como é uma função já pode receber parâmetros
+require('./api/produto')(app, 'com param!')
+
+app.post('/usuario', usuarioApi.salvar) //comunicação com o modulo api/usuario
+app.get('/usuario', usuarioApi.obter) //comunicação com o modulo api/usuario
 
 app.use(bodyParser.text())
 app.use(bodyParser.json())
