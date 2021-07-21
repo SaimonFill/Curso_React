@@ -6,6 +6,7 @@ export default StyleSheet.create({
         textAlign: "center" // deixa todo o texto centralizado
     },
     App: {
+        backgroundColor: '#bbc3c4',
         flexGrow: 1,
         justifyContent: "center",
         alignItems: "center",
