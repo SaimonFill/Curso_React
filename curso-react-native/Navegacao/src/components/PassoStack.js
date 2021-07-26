@@ -1,5 +1,7 @@
 import React from 'react'
-import { View, Text, Button } from 'react-native'
+import { View, Text, Button, StyleSheet, Switch } from 'react-native'
+
+const op = 2
 
 export default props => (
     <View style={{ flex: 1 }}>
@@ -7,8 +9,15 @@ export default props => (
             {props.avancar
                 ? <Button
                     title='Avançar'
-                    onPress={() =>
-                        props.navigation.push(props.avancar)}
+                    onPress={() => {
+                        props.navigation.push(
+                            props.avancar,
+                            {
+                                numero: parseInt(Math.random() * 100)
+                            }
+                        )
+                    }}
+                    color={styles(op)}
                 />
                 : false
             }
@@ -16,8 +25,10 @@ export default props => (
             {props.voltar
                 ? <Button
                     title='Voltar'
-                    onPress={() =>
-                        props.navigation.goBack()}
+                    onPress={() => {
+                        props.navigation.goBack()
+                    }}
+                    color={styles(op)}
                 />
                 : false
             }
@@ -25,8 +36,10 @@ export default props => (
             {props.voltarTelaA
                 ? <Button
                     title='Voltar para Tela A'
-                    onPress={() =>
-                        props.navigation.navigate("TelaA")}
+                    onPress={() => {
+                        props.navigation.navigate("TelaA")
+                    }}
+                    color={styles(op)}
                 />
                 : false
             }
@@ -36,3 +49,12 @@ export default props => (
         </View>
     </View>
 )
+
+function styles() {
+    if (op == 1) {
+        return color = '#009dc4'
+    }
+    if (op == 2) {
+        return color = '#004e61'
+    }
+}
