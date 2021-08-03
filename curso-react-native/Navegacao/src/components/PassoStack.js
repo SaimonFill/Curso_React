@@ -1,26 +1,14 @@
 import React from 'react'
-import { View, Text, Button, StyleSheet, Switch } from 'react-native'
-
-const op = 2
+import { View, Text, Button, StyleSheet, Switch, SafeAreaView } from 'react-native'
+import TelaA from '../views/TelaA'
+import TelaB from '../views/TelaB'
 
 export default props => (
     <View style={{ flex: 1 }}>
-        <View>
-            {props.avancar
-                ? <Button
-                    title='Avançar'
-                    onPress={() => {
-                        props.navigation.push(
-                            props.avancar,
-                            {
-                                numero: parseInt(Math.random() * 100)
-                            }
-                        )
-                    }}
-                    color={styles(op)}
-                />
-                : false
-            }
+        <View style={{
+            flexDirection: 'row',
+            justifyContent: 'space-around',
+        }}>
 
             {props.voltar
                 ? <Button
@@ -28,18 +16,19 @@ export default props => (
                     onPress={() => {
                         props.navigation.goBack()
                     }}
-                    color={styles(op)}
                 />
                 : false
             }
 
-            {props.voltarTelaA
+            {props.avancar
                 ? <Button
-                    title='Voltar para Tela A'
+                    title='Avançar'
                     onPress={() => {
-                        props.navigation.navigate("TelaA")
+                        props.navigation.navigate(
+                            props.avancar,
+                            props.avancarParams
+                        )
                     }}
-                    color={styles(op)}
                 />
                 : false
             }
@@ -49,12 +38,3 @@ export default props => (
         </View>
     </View>
 )
-
-function styles() {
-    if (op == 1) {
-        return color = '#009dc4'
-    }
-    if (op == 2) {
-        return color = '#004e61'
-    }
-}

@@ -7,5 +7,3 @@ export default props => (
         Tela A
     </TextoCentral>
 )
-
-//teste git
