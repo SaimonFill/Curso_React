@@ -5,10 +5,11 @@ import TextoCentral from '../components/TextoCentral'
 
 export default props => {
     return (
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1, backgroundColor: '#add1ff' }}>
             <View style={{ // barra superior
                 flexDirection: 'row',
-                justifyContent: 'flex-start',
+                borderRadius: 10,
+                justifyContent: 'space-between',
                 backgroundColor: '#00a2fa'
             }}>
                 <TouchableHighlight
@@ -24,6 +25,7 @@ export default props => {
                         color='white'
                     />
                 </TouchableHighlight>
+
             </View>
             <View style={{ flex: 1 }}>
                 <TextoCentral corFundo='#add1ff' corTexto='#000'>
