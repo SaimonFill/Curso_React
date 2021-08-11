@@ -1,14 +1,9 @@
 import React from 'react'
-import { SafeAreaView, Text } from 'react-native'
-import TextoCentral from './components/TextoCentral'
-import TelaA from './views/TelaA'
-import TelaB from './views/TelaB'
-import TelaC from './views/TelaC'
+import { SafeAreaView } from 'react-native'
+import HomeScreen from './views/HomeScreen'
 
 export default props => (
     <SafeAreaView style={{ flex: 1 }}>
-        <TelaA />
-        <TelaB />
-        <TelaC />
+        <HomeScreen />
     </SafeAreaView>
 )

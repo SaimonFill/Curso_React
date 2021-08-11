@@ -29,7 +29,7 @@ export default props => {
             </View>
             <View style={{ flex: 1 }}>
                 <TextoCentral corFundo='#add1ff' corTexto='#000'>
-                    Tela D
+                    HomeScreen
                 </TextoCentral>
             </View>
         </View>

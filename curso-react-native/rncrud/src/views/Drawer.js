@@ -2,7 +2,7 @@ import React, { createContext } from 'react'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 
-import HomeScreen from '../views/HomeScreen'
+import HomeScreen from './HomeScreen'
 
 const Drawer = createDrawerNavigator()
 
@@ -14,7 +14,7 @@ export default props => (
 
                 switch (route.name) {
                     case 'HomeScreen':
-                        iconName = focused = 'home-outline'
+                        iconName = focused = 'reorder-four'
                         break;
                 }
                 return <Ionicons name={iconName} size={size} color={color} />;
